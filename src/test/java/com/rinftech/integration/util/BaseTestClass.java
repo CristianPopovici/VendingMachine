@@ -3,6 +3,7 @@ package com.rinftech.integration.util;
 import org.junit.runner.RunWith;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,7 +17,8 @@ import java.util.Properties;
 public abstract class BaseTestClass {
 
     @Configuration
-    @ComponentScan(basePackages = {"com.rinftech"})
+    @ComponentScan(basePackages = {"com.rinftech",""})
+    @PropertySource("classpath:/application.properties")
     static class TestConfiguration {
     }
 
