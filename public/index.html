@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vending Machine</title>
+    <script type="text/javascript">
+    var buttonPressed;
+    var onSubmitHandler = function(){
+       var form = document.getElementById("form");
+       var value = form.input.value;
+       if(buttonPressed === "optimal"){
+        form.action = "/vending-machine/v1/optimal-coin-changer/"+value;
+        form.method = "get"
+       }else{
+        form.action = "/vending-machine/v1/repository-coin-changer/"+value;
+        form.method = "post"
+       }
+       form.submit();
+    }
+    var onOptimalClick = function(){
+        buttonPressed="optimal";
+    }
+    var onRepoClick = function(){
+        buttonPressed="repo";
+    }
+    </script>
+</head>
+<body>
+    <form id="form" onsubmit="onSubmitHandler()">
+        <label for="input">&pound;</label>
+        <input id="input" name="input" type="number">
+        <input type="submit" name="optimal" onclick="onOptimalClick()" value="Get Optimal Change"/>
+        <input type="submit" name="repository" onclick="onRepoClick()" value="Get Change From Repo"/>
+    </form>
+</body>
+</html>
