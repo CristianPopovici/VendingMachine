@@ -13,7 +13,7 @@ have maven installed.
  in resources folder. The program can run with the classpath coin-inventory.properties if the "repository.path"
   property is left empty but no persistence will take place.
 2. mvn clean install
-3. mvn spring-boot:run   without any other app on port 8080
+3. mvn spring-boot:run - without any other app on port 8080
 4. open browser > localhost:8080
 
 ## Built With
